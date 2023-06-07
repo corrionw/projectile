@@ -175,7 +175,7 @@ local function SimulateProjectileByTick(ProjectileObject, DeltaTime: number): ()
 
 
     MovePhysicalProjectileTo(ProjectileObject, CFrame.lookAt(previousPosition, point))
-    FireSignal(ProjectileObject.Parent, "ProjectileMoved")
+    FireSignal(ProjectileObject.Parent, "ProjectileMoved", ProjectileObject, previousPosition, actualDisplacement, currentVelocity, projectileData.Instance)
 
     if (raycastResult) then
         if (projectileData.PenetrationCallback) then
